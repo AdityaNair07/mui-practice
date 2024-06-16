@@ -1,0 +1,7 @@
+.customFont {
+  @font-face {
+    font-family: "BreathDemo";
+    src: url("./assets/fonts/breathdemo/Breath_Demo.ttf") format("tff");
+    font-style: normal;
+  }
+}
