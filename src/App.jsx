@@ -10,6 +10,7 @@ import {
   styled,
 } from "@mui/material";
 import HomePage from "./pages/HomePage";
+import AutoComplete from "./pages/AutoComplete";
 
 export default function App() {
   // custom component
@@ -53,7 +54,11 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/:id" element={<Animal />} />
+          <Route path="/autocomplete" element={<AutoComplete />} />
         </Routes>
+        <nav>
+          <Link to="/autocomplete">Autocomplete component</Link>
+        </nav>
       </BrowserRouter>
       <Container
         component={"div"}
@@ -73,3 +78,78 @@ export default function App() {
     </Box>
   );
 }
+
+// import React, { useRef, useEffect } from "react";
+// import { makeStyles } from "@material-ui/core/styles";
+// import AppBar from "@material-ui/core/AppBar";
+// import Toolbar from "@material-ui/core/Toolbar";
+// import Table from "@material-ui/core/Table";
+// import TableRow from "@material-ui/core/TableRow";
+// import TableCell from "@material-ui/core/TableCell";
+// import Paper from "@material-ui/core/Paper";
+
+// const useStyles = makeStyles((theme) => ({
+//   appBar: {
+//     position: "sticky",
+//     top: 0,
+//     zIndex: 1000, // Ensure it's above other elements
+//   },
+//   tableContainer: {
+//     marginTop: theme.spacing(8), // Adjust as needed based on your layout
+//     position: "relative",
+//   },
+// }));
+
+// const App = () => {
+//   const classes = useStyles();
+//   const searchRef = useRef(null);
+//   const tableRef = useRef(null);
+
+//   useEffect(() => {
+//     const searchElement = searchRef.current;
+//     const tableElement = tableRef.current;
+
+//     const observer = new IntersectionObserver((entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           // Add logic to stop scrolling or handle intersection point
+//           // You can use CSS classes or state to manage this behavior
+//         }
+//       });
+//     });
+
+//     observer.observe(tableElement);
+
+//     return () => observer.unobserve(tableElement);
+//   }, []);
+
+//   return (
+//     <div>
+//       <AppBar className={classes.appBar}>
+//         <Toolbar ref={searchRef}>
+//           {/* Your sticky search bar content */}
+//           <input type="text" placeholder="Search..." />
+//         </Toolbar>
+//       </AppBar>
+
+//       <Paper className={classes.tableContainer}>
+//         <Table ref={tableRef}>
+//           <TableRow>
+//             <TableCell>Table Content</TableCell>
+//           </TableRow>
+//           {/* Add more table rows as needed */}
+//         </Table>
+//       </Paper>
+
+//       <div style={{ marginTop: "20px" }}>
+//         {/* Your paragraph content */}
+//         <p>
+//           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+//           scelerisque urna vel arcu dictum, vitae dapibus leo tristique.
+//         </p>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;
