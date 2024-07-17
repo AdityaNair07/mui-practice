@@ -31,6 +31,9 @@ const AutoComplete = () => {
           border: "2px solid red",
         }}
       >
+        <Typography variant="h4" sx={{ m: 2, color: "teal" }}>
+          Typography component
+        </Typography>
         <Autocomplete
           options={countries}
           renderInput={(element) => <TextField {...element} />}
