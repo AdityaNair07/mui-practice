@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import HomePage from "./pages/HomePage";
 import AutoComplete from "./pages/AutoComplete";
+import CustomCard1 from "./pages/CustomCard1";
 
 export default function App() {
   // custom component
@@ -55,9 +56,11 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/:id" element={<Animal />} />
           <Route path="/autocomplete" element={<AutoComplete />} />
+          <Route path="/customcard" element={<CustomCard1 />} />
         </Routes>
         <nav>
           <Link to="/autocomplete">Autocomplete component</Link>
+          <Link to="/customcard">Card component</Link>
         </nav>
       </BrowserRouter>
       <Container
